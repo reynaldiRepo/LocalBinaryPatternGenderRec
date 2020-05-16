@@ -30,7 +30,7 @@ class Model():
             label.append(jsonTemp["class"])
 
         #create model
-        modelLSVC = LinearSVC()
+        modelLSVC = LinearSVC(random_state=42, C=100, max_iter=10000)
         self.model = modelLSVC.fit(data, label)
 
         #write to json file
