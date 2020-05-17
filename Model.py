@@ -4,7 +4,7 @@ from imutils import paths
 import cv2
 import os
 import json
-
+import random
 
 class Model():
     def __init__(self, K_Fold=False, dataIn=None, LabelIn=None):
@@ -16,30 +16,28 @@ class Model():
         dirpath = (os.path.dirname(__file__))
         training_rel_path = "training"
         abs_training_path = os.path.join(dirpath, training_rel_path)
+
         #describe image to lbp histogram
-        datasetArr = []
+        datasetDict = {}
         for imagePath in paths.list_images(abs_training_path):
             image = cv2.imread(imagePath)
             grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY);
             hist = self.desc.describe(grey)
-            jsonTemp =  {"dir":imagePath, 
+            datasetDict[os.path.basename(imagePath)] =  {"dir":imagePath, 
                         "filename":os.path.basename(imagePath), 
                         "class":imagePath.split('\\')[-2]}
-            datasetArr.append(jsonTemp)
             data.append(hist)
-            label.append(jsonTemp["class"])
+            label.append(imagePath.split('\\')[-2])
 
         #create model
-        modelLSVC = LinearSVC(random_state=42, C=100, max_iter=10000)
-        self.model= None
-        if(K_Fold == True):
+        self.model = None
+        modelLSVC = LinearSVC(C=500.0, random_state=42, max_iter=100000)
+        if K_Fold == True :
             self.model = modelLSVC.fit(dataIn, LabelIn)
-        else:
+        else :
             self.model = modelLSVC.fit(data, label)
         #write to json file
-        datasetJson = json.dumps(datasetArr,indent=4)
+        datasetJson = json.dumps(datasetDict,indent=4)
         file = open("dataset.json", "w")
         file.write(datasetJson)
         file.close()
-
-Model()
