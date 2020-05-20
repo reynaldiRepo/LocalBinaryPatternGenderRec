@@ -1,4 +1,5 @@
-Testing Fold-1 image						|	Gender	|	Predict	|
+Testing Fold-1
+image									|	Gender	|	Predict	|
 ================================================================+
 15_1_0_20170103200925950.jpg.chip.jpg	|	female	|	male	|
 15_1_0_20170103201844088.jpg.chip.jpg	|	female	|	male	|
@@ -106,7 +107,8 @@ right prediction	: 72
 Acr on fold-1		: 72.0
 
 ================================================================+
-Testing Fold-2 image						|	Gender	|	Predict	|
+Testing Fold-2
+image									|	Gender	|	Predict	|
 ================================================================+
 15_1_0_20170104013418578.jpg.chip.jpg	|	female	|	female	|
 15_1_0_20170105000525758.jpg.chip.jpg	|	female	|	female	|
@@ -214,7 +216,8 @@ right prediction	: 73
 Acr on fold-2		: 73.0
 
 ================================================================+
-Testing Fold-3 image						|	Gender	|	Predict	|
+Testing Fold-3
+image									|	Gender	|	Predict	|
 ================================================================+
 15_1_0_20170109203414090.jpg.chip.jpg	|	female	|	female	|
 15_1_0_20170109204203014.jpg.chip.jpg	|	female	|	female	|
@@ -322,7 +325,8 @@ right prediction	: 72
 Acr on fold-3		: 72.0
 
 ================================================================+
-Testing Fold-4 image						|	Gender	|	Predict	|
+Testing Fold-4
+image									|	Gender	|	Predict	|
 ================================================================+
 15_1_0_20170104013549874.jpg.chip.jpg	|	female	|	female	|
 15_1_0_20170109204142217.jpg.chip.jpg	|	female	|	male	|
@@ -430,7 +434,8 @@ right prediction	: 71
 Acr on fold-4		: 71.0
 
 ================================================================+
-Testing Fold-5 image						|	Gender	|	Predict	|
+Testing Fold-5
+image									|	Gender	|	Predict	|
 ================================================================+
 15_1_0_20170103201148510.jpg.chip.jpg	|	female	|	female	|
 15_1_0_20170109204314585.jpg.chip.jpg	|	female	|	female	|

@@ -36,7 +36,7 @@ for f in fold.fold:
    
      ##write on txt file
     txtFile.write("Testing Fold-"+str(k))
-    txtFile.write(" image\t\t\t\t\t\t|\tGender\t|\tPredict\t|\n")
+    txtFile.write("\nimage\t\t\t\t\t\t\t\t\t|\tGender\t|\tPredict\t|\n")
     txtFile.write("================================================================+\n")
     for testingData in [dataset_dict[train] for train in f[1]] :
         predict = recog.recog(testingData["dir"])
