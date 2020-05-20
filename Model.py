@@ -1,10 +1,10 @@
 from LocalBinaryPattern import LocalBinaryPattern
 from sklearn.svm import LinearSVC
+import joblib
 from imutils import paths
 import cv2
 import os
 import json
-import random
 
 class Model():
     def __init__(self, K_Fold=False, dataIn=None, LabelIn=None):
@@ -37,9 +37,14 @@ class Model():
                 data.append(hist)
                 label.append(imagePath.split('\\')[-2])
             self.model = modelLSVC.fit(data, label)
+
+            #save model
+            save_model =  joblib.dump(self.model, 'gender_rec_model_svm.pkl')
             
             #write to json file
             datasetJson = json.dumps(datasetDict,indent=4)
             file = open("dataset.json", "w")
             file.write(datasetJson)
             file.close()
+
+Model()
