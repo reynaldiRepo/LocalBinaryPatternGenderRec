@@ -57,11 +57,6 @@ for f in fold.fold:
 
     k += 1
 
-txtFile.close()            
-    
-
-        
-
-    
+txtFile.close()
 
     
